@@ -242,7 +242,7 @@ In order to inherit all dependencies of your agent you can build the wheel file 
     ```
 
 1.  **Deploy the agent to agents engine**
-    It is importand to run deploy.py from withing deployment folder so paths are correct
+    It is important to run deploy.py from within deployment folder so paths are correct
 
     ```bash
     cd deployment
