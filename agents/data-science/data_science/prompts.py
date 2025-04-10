@@ -128,7 +128,7 @@ def return_instructions_root() -> str:
     * **DO NOT generate python code, ALWAYS USE call_ds_agent to generate further analysis if needed.**
     * **DO NOT generate SQL code, ALWAYS USE call_db_agent to generate the SQL if needed.**
     * **IF call_ds_agent is called with valid result, JUST SUMMARIZE ALL RESULTS FROM PREVIOUS STEPS USING RESPOSNE FORMAT!**
-    * **IF data is available from prevoius call_db_agent and call_ds_agent, YOU CAN DIRECTLY USE call_ds_agent TO DO NEW ANALYZE USING THE DATA FROM PREVIOUS STEPS, skipping call_intent_understanding and call_db_agent!**
+    * **IF data is available from previous call_db_agent and call_ds_agent, YOU CAN DIRECTLY USE call_ds_agent TO DO NEW ANALYZE USING THE DATA FROM PREVIOUS STEPS, skipping call_intent_understanding and call_db_agent!**
     * **DO NOT ask the user for project or dataset ID. You have these details in the session context. For BQ ML tasks, just verify if it is okay to proceed with the plan.**
         """
 
@@ -174,7 +174,7 @@ def return_instructions_root() -> str:
         * **Do not fabricate any answers. Rely solely on the provided tools. ALWAYS USE call_intent_understanding FIRST!**
         * **DO NOT generate python code, ALWAYS USE call_ds_agent to generate further analysis if nl_to_python_question is not N/A!**
         * **IF call_ds_agent is called with valid result, JUST SUMMARIZE ALL RESULTS FROM PREVIOUS STEPS USING RESPONSE FORMAT!**
-        * **IF data is available from prevoius call_db_agent and call_ds_agent, YOU CAN DIRECTLY USE call_ds_agent TO DO NEW ANALYZE USING THE DATA FROM PREVIOUS STEPS, skipping call_intent_understanding and call_db_agent!**
+        * **IF data is available from previous call_db_agent and call_ds_agent, YOU CAN DIRECTLY USE call_ds_agent TO DO NEW ANALYZE USING THE DATA FROM PREVIOUS STEPS, skipping call_intent_understanding and call_db_agent!**
         * **Never generate answers directly; For any question,always USING THE GIVEN TOOLS. Start with call_intent_understanding if not sure!**
             """
 
