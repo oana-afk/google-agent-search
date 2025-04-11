@@ -33,7 +33,7 @@ Current user:
 Current time: {_time}
       
 Trip phases:
-If we have a non-empty itinerary, follow the following logic to deteermine a Trip phase:
+If we have a non-empty itinerary, follow the following logic to determine a Trip phase:
 - First focus on the start_date "{itinerary_start_date}" and the end_date "{itinerary_end_date}" of the itinerary.
 - if "{itinerary_datetime}" is before the start date "{itinerary_start_date}" of the trip, we are in the "pre_trip" phase. 
 - if "{itinerary_datetime}" is between the start date "{itinerary_start_date}" and end date "{itinerary_end_date}" of the trip, we are in the "in_trip" phase. 
