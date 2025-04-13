@@ -24,6 +24,7 @@ def calculateBmr(sex: str, age: int, weight: float, height: float, activity_leve
     - weight: weight in kilograms
     - height: height in centimeters
     - activity_level: physical activity level (optional, default is 'sedentary')
+        Choose from: 'sedentary', 'lightly active', 'moderately active', 'very active', 'super active'
 
     Returns:
     - Estimated total daily caloric expenditure in kcal
@@ -39,10 +40,10 @@ def calculateBmr(sex: str, age: int, weight: float, height: float, activity_leve
     # Activity level multipliers
     activity_factors = {
         "sedentary": 1.2,
-        "light": 1.375,
-        "moderate": 1.55,
-        "intense": 1.725,
-        "very intense": 1.9
+        "lightly active": 1.375,
+        "moderately active": 1.55,
+        "very active": 1.725,
+        "super active": 1.9
     }
 
     factor = activity_factors.get(activity_level.lower(), 1.2)  # Default to sedentary if not recognized
