@@ -94,7 +94,7 @@ to implement this workflow.
 
     Install the FOMC Research agent requirements:
     ```bash
-    poetry install
+    pip install poetry pdfplumber diff_match_patch
     ```
 
     This will also install the released version of 'google-adk', the Google Agent Development Kit.
