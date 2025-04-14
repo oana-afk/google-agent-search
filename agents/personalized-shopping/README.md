@@ -80,7 +80,7 @@ IMPORTANT HIGHLIGHTS:
 * To run the agent, first download the JSON files containing the product information, which are necessary to initialize the web environment the agent will interact with.
 
     ```bash
-    cd shared_libraries
+    cd personalized_shopping/shared_libraries
     mkdir data
     cd data
 
