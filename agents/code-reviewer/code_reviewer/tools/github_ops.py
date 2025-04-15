@@ -2,12 +2,12 @@ import os
 from dotenv import load_dotenv
 import logging
 
-from google.adk.tools import ToolContext
 from github import (
     Auth,
     Github,
     Repository,
-    Commit
+    Commit,
+    PullRequest
 )
 
 from github.GithubException import (
@@ -60,7 +60,7 @@ class GithubHandler:
         except UnknownObjectException as get_commit_error:
             logging.error(f"Get commit error: {get_commit_error}")
 
-    def create_pr(self, title: str, body:str, base="main", head="preprod"):
+    def create_pr(self, title: str, body:str, base="main", head="preprod") -> PullRequest:
         try:
             repo = self.get_repository()
 
@@ -75,7 +75,7 @@ class GithubHandler:
         except UnknownObjectException as create_pr_error:
             logging.error(f"Create PR Error: {create_pr_error}")
         
-    def get_pr(self, pr_number: int):
+    def get_pr(self, pr_number: int) -> PullRequest:
         try:
             repo = self.get_repository()
             pr = repo.get_pull(pr_number)
@@ -83,27 +83,3 @@ class GithubHandler:
             return pr
         except UnknownObjectException as get_pr_error:
             logging.error(f"PR number error: {get_pr_error}")
-
-
-def main():
-    gh = GithubHandler("ju4nv1e1r4/real-estate-dl")
-
-    repo = gh.get_repository()
-    print(repo)
-    print("---")
-
-    gh.get_commit("4993a0317dc4efa0b33bb317082dee1621cc62eb")
-    print("---")
-
-    gh.create_pr(
-        "This is title created by automation",
-        "This is an example of PR created by automation",
-        base="main",
-        head="dev"
-    )
-    print("---")
-
-    gh.get_pr(1)
-
-if __name__ == "__main__":
-    main()
