@@ -19,13 +19,19 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(
 load_dotenv()
 
 class GithubHandler:
-    def __init__(self, repo_name):
+    def __init__(self, repo_name: str):
+        """
+        Initialize the GithubHandler with the repository name.
+        """
         self.repo_name = repo_name
         self.pat = os.getenv("GH_PAT")
         if not self.pat:
             raise ValueError("GitHub token not found. Check the .env file")
 
     def authenticate(self) -> Github:
+        """
+        Authenticate with the GitHub API using the provided token.
+        """
         try:
             auth = Auth.Token(self.pat)
             gh = Github(auth=auth)
@@ -39,6 +45,9 @@ class GithubHandler:
 
 
     def get_repository(self, lazy = False) -> Repository:
+        """
+        Get the repository object for the specified repository name.
+        """
         try:
             gh = self.authenticate()
             repo =  gh.get_repo(
@@ -52,6 +61,9 @@ class GithubHandler:
 
 
     def get_commit(self, sha: str) -> Commit:
+        """
+        Get the commit object for the specified SHA.
+        """
         try:
             repo = self.get_repository()
             commit = repo.get_commit(sha=sha)
@@ -61,6 +73,9 @@ class GithubHandler:
             logging.error(f"Get commit error: {get_commit_error}")
 
     def create_pr(self, title: str, body:str, base="main", head="preprod") -> PullRequest:
+        """
+        Create a pull request with the specified title and body.
+        """
         try:
             repo = self.get_repository()
 
@@ -76,6 +91,9 @@ class GithubHandler:
             logging.error(f"Create PR Error: {create_pr_error}")
         
     def get_pr(self, pr_number: int) -> PullRequest:
+        """
+        Get the pull request object for the specified PR number.
+        """
         try:
             repo = self.get_repository()
             pr = repo.get_pull(pr_number)
