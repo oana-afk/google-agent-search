@@ -1,4 +1,20 @@
-# Documentation Retrieval Agent
+# Starter Template Agent
+
+> [!IMPORTANT]
+>
+> This is a starter template to help you build your own agent using ADK!
+>
+> If you plan to contribute a sample to this repository, use this template as a
+> building block.
+>
+> To do so, start by copying this `starter-template` folder over to the `agents/`
+> folder and re-naming it.
+>
+> ```sh
+> git clone https://github.com/google/adk-samples.git
+> cd adk-samples
+>
+> mv -R starter-template/ /agents/<YOUR_AGENT_NAME>/
 
 ## Overview
 
@@ -13,7 +29,7 @@ This diagram outlines the agent's workflow, designed to provide informed and con
 | Attribute         | Details                                                                                                                                                                                             |
 | :---------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Interaction Type** | Conversational                                                                                                                                                                                      |
-| **Complexity**    | Intermediate 
+| **Complexity**    | Intermediate
 | **Agent Type**    | Single Agent                                                                                                                                                                                        |
 | **Components**    | Tools, RAG, Evaluation                                                                                                                                                                               |
 | **Vertical**      | Horizontal                                                                                                                                                                               |

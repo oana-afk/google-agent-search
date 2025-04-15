@@ -12,17 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# ----- Define custom tools for root Agent created in agent.py -----
+# ----- Define custom tools for router (root) agent created in agent.py -----
 
 
-def tool1_name(example: str = "world") -> str:
+def tool1_name(name: str = "world") -> str:
     """Provide a detailed docstring for your tool.
 
     Args:
-        example (str, optional): An example description of a tool argument.
+        name (str, optional): An example description of a tool argument.
             Defaults to "world".
 
     Returns:
         str: A friendly greeting message.
     """
-    return f"Hello {example}!"
+    return f"Hello {name}!"

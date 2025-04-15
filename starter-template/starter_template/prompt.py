@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# ----- Define the prompt for your root Agent -----
+# ----- Define the prompt for your router (root) agent -----
 
 ROOT_PROMPT = """
 Provide a detailed prompt for your root agent.

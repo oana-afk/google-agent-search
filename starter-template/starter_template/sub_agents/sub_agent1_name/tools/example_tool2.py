@@ -15,14 +15,14 @@
 # ----- Define custom tools for specialized sub Agent created in agent.py -----
 
 
-def tool2_name(example: str = "world") -> str:
+def tool2_name(name: str = "world") -> str:
     """Provide a detailed docstring for your tool.
 
     Args:
-        example (str, optional): An example description of a tool argument.
+        name (str, optional): An example description of a tool argument.
             Defaults to "world".
 
     Returns:
         str: A friendly greeting message.
     """
-    return f"Hello {example}!"
+    return f"Hello {name}!"

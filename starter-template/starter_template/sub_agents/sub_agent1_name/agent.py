@@ -17,9 +17,9 @@ from google.adk.agents import Agent
 from .tools.example_tool2 import tool2_name
 from .prompt import SUB_AGENT1_PROMPT
 
-# ----- Define a specialized sub Agent to be used by root Agent -----
+# ----- Define a specialized sub-agent to be used by root agent -----
 
-sub_agent1 = Agent(
+sub_agent1_name = Agent(
     name="sub_agent1",
     model="gemini-2.0-flash",
     instruction=SUB_AGENT1_PROMPT,

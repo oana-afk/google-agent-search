@@ -13,7 +13,7 @@
 # limitations under the License.
 
 SUB_AGENT1_PROMPT = """
-Provide a detailed prompt for your specialized sub agent.
+Provide a detailed prompt for your specialized sub-agent.
 
 Clearly outline all goals, constraints, formatting requirements, examples, etc. 
 """

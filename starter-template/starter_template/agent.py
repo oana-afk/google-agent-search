@@ -19,12 +19,14 @@ from dotenv import load_dotenv
 from .prompt import ROOT_PROMPT
 from .tools.example_tool import tool1_name
 
-from sub_agents.sub_agent1_name import sub_agent1
+from .sub_agents.sub_agent1_name import sub_agent1_name
 
 load_dotenv()
 
 
 # ----- Define Router (root) Agent -----
+
+
 root_agent = Agent(
     name="starter_template",
     model="gemini-2.0-flash",
@@ -36,7 +38,8 @@ root_agent = Agent(
         # Tool 3
     ],
     sub_agents=[
-        sub_agent1,
+        # Sub agents are defined in sub_agents/ folder
+        sub_agent1_name,
         # Agent 2
         # Agent 3
     ],

@@ -14,21 +14,26 @@
 
 import pathlib
 
+import dotenv
 from google.adk.evaluation.agent_evaluator import AgentEvaluator
 
-import dotenv
 import pytest
 
 
-@pytest.fixture(scope='session', autouse=True)
+@pytest.fixture(scope="session", autouse=True)
 def load_env():
     dotenv.load_dotenv()
 
 
-def test_eval_full_conversation():
+# ----- Define evals to run on test data from `/data` folder -----
+
+
+def test_eval_full():
     """Test the agent's basic ability on a few examples."""
     AgentEvaluator.evaluate(
-       agent_module="rag",
-       eval_dataset_file_path_or_dir=str(pathlib.Path(__file__).parent / "data/conversation.test.json"),
-       num_runs=1,
+        agent_module="starter_template",
+        eval_dataset_file_path_or_dir=str(
+            pathlib.Path(__file__).parent / "data/test.json"
+        ),
+        num_runs=1,
     )

@@ -7,7 +7,7 @@ authors = [{ name = "Your Name", email = "your.name@test.com" }]
 license = "Apache License 2.0"
 readme = "README.md"
 
-# Dependencies required for your sample
+# Dependencies required for your sample and local deployment
 [tool.poetry.dependencies]
 python = "^3.11"
 google-adk = ">=0.1.0"
@@ -22,6 +22,7 @@ pytest = "^8.3.5"
 pytest-mock = "^3.14.0"
 pytest-cov = "^6.0.0"
 pytest-asyncio = "^0.25.3"
+google-adk = { extras = ["eval"], version = ">=0.1.0" }
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
