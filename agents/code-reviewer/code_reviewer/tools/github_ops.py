@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 import logging
+import requests
 
 from github import (
     Auth,
@@ -101,3 +102,30 @@ class GithubHandler:
             return pr
         except UnknownObjectException as get_pr_error:
             logging.error(f"PR number error: {get_pr_error}")
+    
+    def get_diff(self, pr_number: int) -> str:
+        """
+        Get the diff of the specified PR.
+        """
+        try:
+            pr = self.get_pr(pr_number)
+            diff_url = pr.diff_url
+            logging.info(f"PR Diff URL: {diff_url}")
+            
+            headers = {
+                "Accept": "application/vnd.github.v3.diff",
+                "Authorization": f"Bearer {self.pat}"
+            }
+
+            response = requests.get(diff_url, headers=headers)
+
+            if response.status_code == 200:
+                return response.text
+            else:
+                logging.error(f"Failed to fetch diff. Status code: {response.status_code}")
+                return None
+        except UnknownObjectException as get_diff_error:
+            logging.error(f"Get diff error: {get_diff_error}") 
+        except Exception as e:
+            logging.error(f"An error occurred: {e}")
+            return None
