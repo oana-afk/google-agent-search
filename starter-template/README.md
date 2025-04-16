@@ -89,14 +89,14 @@ The key attributes of the `<YOUR_AGENT_NAME>` Agent include:
 
 ### Project Setup with Poetry
 
-1. **Clone the Repository:**
+#### 1. **Clone the Repository:**
 
-    ```bash
-    git clone https://github.com/google/adk-samples.git
-    cd adk-samples/agents/<YOUR_AGENT_NAME>
-    ```
+```bash
+git clone https://github.com/google/adk-samples.git
+cd adk-samples/agents/<YOUR_AGENT_NAME>
+```
 
-2. **Install Dependencies with Poetry:**
+#### 2. **Install Dependencies with Poetry:**
 
 > [!NOTE]
 > If you do not already have Poetry installed you can follow the instructions on
@@ -105,35 +105,35 @@ The key attributes of the `<YOUR_AGENT_NAME>` Agent include:
 >
 > ```bash
 > pip install poetry
->
+> ```
 
-    Install dependencies using Poetry (recommended) or pip.
+Install dependencies using Poetry (recommended) or pip.
 
-    ```bash
-    poetry install
-    ```
+```bash
+poetry install
+```
 
-    This command reads the `pyproject.toml` file and installs all the necessary
-    dependencies into a virtual environment managed by Poetry.
+This command reads the `pyproject.toml` file and installs all the necessary
+dependencies into a virtual environment managed by Poetry.
 
-3. **Activate the Poetry Shell:**
+#### 3. **Activate the Poetry Shell:**
 
-    ```bash
-    poetry env activate
-    ```
+```bash
+poetry env activate
+```
 
-    This activates the virtual environment, allowing you to run commands within
-    the project's environment. Make sure the environment is active. If not, you
-    can also activate it through the following:
+This activates the virtual environment, allowing you to run commands within
+the project's environment. Make sure the environment is active. If not, you
+can also activate it through the following:
 
-    ```bash
-    source .venv/bin/activate 
-    ```
+```bash
+source .venv/bin/activate 
+```
 
-4. **Set up Environment Variables:**
+#### 4. **Set up Environment Variables:**
 
-    Rename the file `.env.example` to `.env` and follow the steps in the file to
-    set up the environment variables.
+Rename the file `.env.example` to `.env` and follow the steps in the file to
+set up the environment variables.
 
 > [!IMPORTANT]
 >
@@ -150,21 +150,21 @@ The key attributes of the `<YOUR_AGENT_NAME>` Agent include:
 >
 > ADK supports both and determines usage via  `GOOGLE_GENAI_USE_VERTEXAI`
 
-    If you plan to deploy your ADK agent to Vertex AI Agent Engine we recommend
-    using `GOOGLE_GENAI_USE_VERTEXAI=1`.
+If you plan to deploy your ADK agent to Vertex AI Agent Engine we recommend
+using `GOOGLE_GENAI_USE_VERTEXAI=1`.
 
-5. **Authenticate your Environment (Required for Vertex AI only)**
+#### 5. **Authenticate your Environment (Required for Vertex AI only)**
 
-    Authenticate your local environment by running the following command:
+Authenticate your local environment by running the following command:
 
-    ```bash
-    gcloud auth application-default login
-    ```
+```bash
+gcloud auth application-default login
+```
 
-6. **Add additional steps for your agent here**
+#### 6. **Add additional steps for your agent here**
 
-    Any other prerequisite steps for your agent should go here. This could include
-    database or data configuration, external API key setup, etc.
+Any other prerequisite steps for your agent should go here. This could include
+database or data configuration, external API key setup, etc.
 
 ## Running the Agent Locally
 
