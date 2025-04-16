@@ -48,85 +48,88 @@
 
 ## Overview
 
-This agent is designed to answer questions related to documents you uploaded to Vertex AI RAG Engine. It utilizes Retrieval-Augmented Generation (RAG) with the Vertex AI RAG Engine to fetch relevant documentation snippets and code references, which are then synthesized by an LLM (Gemini) to provide informative answers with citations.
-
-
-![RAG Architecture](RAG_architecture.png)
-
-This diagram outlines the agent's workflow, designed to provide informed and context-aware responses. User queries are processed by agent development kit. The LLM determines if external knowledge (RAG corpus) is required. If so, the `VertexAiRagRetrieval` tool fetches relevant information from the configured Vertex RAG Engine corpus. The LLM then synthesizes this retrieved information with its internal knowledge to generate an accurate answer, including citations pointing back to the source documentation URLs.
+Give an overview of your sample agent, what it is designed to accomplish and how
+it does so...
 
 ## Agent Details
-| Attribute         | Details                                                                                                                                                                                             |
-| :---------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Interaction Type** | Conversational                                                                                                                                                                                      |
-| **Complexity**    | Intermediate
-| **Agent Type**    | Single Agent                                                                                                                                                                                        |
-| **Components**    | Tools, RAG, Evaluation                                                                                                                                                                               |
-| **Vertical**      | Horizontal                                                                                                                                                                               |
+
+The key attributes of the <YOUR_AGENT_NAME> Agent include:
+
+| Feature              | Details                                  |
+| :------------------: | :--------------------------------------: |
+| **Interaction Type** | Conversational                           |
+| **Complexity**       | Beginner                                 |
+| **Agent Type**       | Multi Agent                              |
+| **Components**       | Tools, Memory, RAG                       |
+| **Vertical**         | i.e. Finances, Data Analysis, E-commerce |
+
 ### Agent Architecture
 
-![RAG](RAG_workflow.png)
+![Agent Workflow](agent_pattern.png)
 
+### Component Details
 
-### Key Features
-
-*   **Retrieval-Augmented Generation (RAG):** Leverages [Vertex AI RAG
-    Engine](https://cloud.google.com/vertex-ai/generative-ai/docs/rag-overview)
-    to fetch relevant documentation.
-*   **Citation Support:** Provides accurate citations for the retrieved content,
-    formatted as URLs.
-*   **Clear Instructions:** Adheres to strict guidelines for providing factual
-    answers and proper citations.
+* **Agents:**
+  * `root_agent` - Description of router (root) agent.
+  * `sub_agent1` - Description of sub-agent 1.
+  * `sub_agent1` - Description of sub-agent 2.
+* **Tools:**
+  * `tool1_name` - Description of first tool.
+  * `tool2_name` - Description of second tool.
+* **Memory:**
+  * ...
 
 ## Setup and Installation Instructions
+
 ### Prerequisites
 
-*   **Google Cloud Account:** You need a Google Cloud account.
-*   **Python 3.9+:** Ensure you have Python 3.9 or a later version installed.
-*   **Poetry:** Install Poetry by following the instructions on the official Poetry website: [https://python-poetry.org/docs/](https://python-poetry.org/docs/)
-*   **Git:** Ensure you have git installed.
+* **Google Cloud Account:** You need a Google Cloud account.
+* **Python 3.9+:** Ensure you have Python 3.9 or a later version installed.
+* **Poetry:** Install Poetry by following the instructions on the official
+  Poetry website: [https://python-poetry.org/docs/](https://python-poetry.org/docs/)
+* **Git:** Ensure you have git installed.
 
 ### Project Setup with Poetry
 
-1.  **Clone the Repository:**
+1. **Clone the Repository:**
 
-    ```bash
-    git clone https://github.com/google/adk-samples.git
-    cd adk-samples/agents/RAG
-    ```
+```bash
+git clone https://github.com/google/adk-samples.git
+cd adk-samples/agents/<YOUR_AGENT_NAME>
+```
 
-2.  **Install Dependencies with Poetry:**
+1. **Install Dependencies with Poetry:**
 
-    ```bash
-    poetry install
-    ```
+```bash
+poetry install
+```
 
-    This command reads the `pyproject.toml` file and installs all the necessary dependencies into a virtual environment managed by Poetry.
+This command reads the `pyproject.toml` file and installs all the necessary
+dependencies into a virtual environment managed by Poetry.
 
-3.  **Activate the Poetry Shell:**
+1. **Activate the Poetry Shell:**
 
-    ```bash
-    poetry env activate
-    ```
+```bash
+poetry env activate
+```
 
-    This activates the virtual environment, allowing you to run commands within the project's environment.
-    Make sure the environment is active. If not, you can also activate it through 
+This activates the virtual environment, allowing you to run commands within the project's environment.
+Make sure the environment is active. If not, you can also activate it through 
 
-     ```bash
-    source .venv/bin/activate 
-    ```   
-4.  **Set up Environment Variables:**
-    Rename the file ".env example" to ".env" 
-    Follow the steps in the file to set up the environment variables.
+```bash
+source .venv/bin/activate 
+```
 
-5. **Setup Corpus:**
-    If you have an existing corpus in Vertex AI RAG Engine, please set corpus information in your .env file. For example: RAG_CORPUS='projects/123/locations/us-central1/ragCorpora/456'. 
+1. **Set up Environment Variables:**
 
-    If you don't have a corpus setup yet, please follow "How to upload my file to my RAG corpus" section. The `prepare_corpus_and_data.py` script will automatically create a corpus (if needed) and update the `RAG_CORPUS` variable in your `.env` file with the resource name of the created or retrieved corpus.
+Rename the file `.env.example` to `.env`
+Follow the steps in the file to set up the environment variables.
 
-#### How to upload my file to my RAG corpus
+1. **Add additional steps for your agent here**
 
-The `rag/shared_libraries/prepare_corpus_and_data.py` script helps you set up a RAG corpus and upload an initial document. By default, it downloads Alphabet's 2024 10-K PDF and uploads it to a new corpus.
+Any other prerequisite steps for your agent should go here. This could include
+database or data configuration, external API key setup, etc.
+
 
 1.  **Authenticate with your Google Cloud account:**
     ```bash
