@@ -98,14 +98,14 @@ The key attributes of the `<YOUR_AGENT_NAME>` Agent include:
 
 2. **Install Dependencies with Poetry:**
 
-    > [!NOTE]
-    > If you do not already have Poetry installed you can follow the instructions on
-    > the offical [Poetry website](https://python-poetry.org/docs/) or by running the
-    > following:
-    >
-    > ```bash
-    > pip install poetry
-    > ```
+> [!NOTE]
+> If you do not already have Poetry installed you can follow the instructions on
+> the offical [Poetry website](https://python-poetry.org/docs/) or by running the
+> following:
+>
+> ```bash
+> pip install poetry
+> ```
 
     Install dependencies using Poetry (recommended) or pip.
 
@@ -135,21 +135,20 @@ The key attributes of the `<YOUR_AGENT_NAME>` Agent include:
     Rename the file `.env.example` to `.env` and follow the steps in the file to
     set up the environment variables.
 
-    > [!IMPORTANT]
-    >
-    > You will notice the following environment variable:
-    >
-    > ```bash
-    > # Choose Model Backend: 0 -> AI Studio, 1 -> Vertex AI
-    > GOOGLE_GENAI_USE_VERTEXAI=1
-    > ```
-    >
-    > Gemini models can be called through two different APIs; one accessed
-    > through Google AI Studio (using an API key) and the other through Vertex
-    > AI (using a Google Cloud project and location).
-    >
-    > ADK supports both and determines usage via  `GOOGLE_GENAI_USE_VERTEXAI`
-    >
+> [!IMPORTANT]
+>
+> You will notice the following environment variable:
+>
+> ```bash
+> # Choose Model Backend: 0 -> AI Studio, 1 -> Vertex AI
+> GOOGLE_GENAI_USE_VERTEXAI=1
+> ```
+>
+> Gemini models can be called through two different APIs; one accessed
+> through Google AI Studio (using an API key) and the other through Vertex
+> AI (using a Google Cloud project and location).
+>
+> ADK supports both and determines usage via  `GOOGLE_GENAI_USE_VERTEXAI`
 
     If you plan to deploy your ADK agent to Vertex AI Agent Engine we recommend
     using `GOOGLE_GENAI_USE_VERTEXAI=1`.
