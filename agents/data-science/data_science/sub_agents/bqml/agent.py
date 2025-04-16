@@ -85,7 +85,7 @@ async def call_db_agent(
 
 
 root_agent = Agent(
-    model="gemini-2.0-flash-exp",
+    model="gemini-2.0-flash-001",
     name="bq_ml_agent",
     instruction=return_instructions_bqml(),
     before_agent_callback=setup_before_agent_call,
