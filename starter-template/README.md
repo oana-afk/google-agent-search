@@ -198,6 +198,12 @@ Provide a quick example of how a user might interact with your agent:
 Evaluations are an important part of assessing an agent's performance and
 effectiveness at performing tasks.
 
+Install the extra dependencies required for running tests and evaluations.
+
+```bash
+poetry install --with dev
+```
+
 The evaluation can be run using the `pytest` module:
 
 ```bash
@@ -233,76 +239,22 @@ When you run the evaluation, the system:
 4. Compares the agent's responses against reference answers
 5. Calculates scores based on the criteria in `test_config.json`
 
-## Deploying the Agent
+## Testing the Agent Components (`tests/` folder)
 
-The Agent can be deployed to Vertex AI Agent Engine using the following
-commands:
+Unit tests for the individual agent components (i.e. custom tools)
 
-```
-python deployment/deploy.py
-```
+Install the extra dependencies required for running tests and evaluations.
 
-After deploying the agent, you'll be able to read the following INFO log message:
-
-```
-Deployed agent to Vertex AI Agent Engine successfully, resource name: projects/<PROJECT_NUMBER>/locations/us-central1/reasoningEngines/<AGENT_ENGINE_ID>
+```bash
+poetry install --with dev
 ```
 
-Please note your Agent Engine resource name and update `.env` file accordingly as this is crutial for testing the remote agent.
+The tests can be run using the `pytest` module:
 
-You may also modify the deployment script for your use cases.
+```bash
+poetry run pytest tests
+```
 
-## Testing the deployed agent
+## Deploying the Agent (`deployment/` folder)
 
-After deploying the agent, follow these steps to test it:
-
-1. **Update Environment Variables:**
-   - Open your `.env` file.
-   - The `AGENT_ENGINE_ID` should have been automatically updated by the `deployment/deploy.py` script when you deployed the agent. Verify that it is set correctly:
-     ```
-     AGENT_ENGINE_ID=projects/<PROJECT_NUMBER>/locations/us-central1/reasoningEngines/<AGENT_ENGINE_ID>
-     ```
-
-2. **Grant RAG Corpus Access Permissions:**
-   - Ensure your `.env` file has the following variables set correctly:
-     ```
-     GOOGLE_CLOUD_PROJECT=your-project-id
-     RAG_CORPUS=projects/<project-number>/locations/us-central1/ragCorpora/<corpus-id>
-     ```
-   - Run the permissions script:
-     ```bash
-     chmod +x deployment/grant_permissions.sh
-     ./deployment/grant_permissions.sh
-     ```
-   This script will:
-   - Read the environment variables from your `.env` file
-   - Create a custom role with RAG Corpus query permissions
-   - Grant the necessary permissions to the AI Platform Reasoning Engine Service Agent
-
-3. **Test the Remote Agent:**
-   - Run the test script:
-     ```bash
-     python deployment/run.py
-     ```
-   This script will:
-   - Connect to your deployed agent
-   - Send a series of test queries
-   - Display the agent's responses with proper formatting
-
-The test script includes example queries about Alphabet's 10-K report. You can modify the queries in `deployment/run.py` to test different aspects of your deployed agent.
-
-## Customization
-
-### Customize Agent
-You can customize system instruction for the agent and add more tools to suit your need, for example, google search.
-
-### Customize Vertex RAG Engine
-You can read more about [official Vertex RAG Engine documentation](https://cloud.google.com/vertex-ai/generative-ai/docs/rag-quickstart) for more details on customizing corpora and data.
-
-
-### Plug-in other retrieval sources
-You can also integrate your preferred retrieval sources to enhance the agent's
-capabilities. For instance, you can seamlessly replace or augment the existing
-`VertexAiRagRetrieval` tool with a tool that utilizes Vertex AI Search or any
-other retrieval mechanism. This flexibility allows you to tailor the agent to
-your specific data sources and retrieval requirements.
+<TODO: Work in progress>
