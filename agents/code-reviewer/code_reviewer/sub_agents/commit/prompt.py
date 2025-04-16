@@ -24,7 +24,8 @@ Please follow the steps below:
 
 <Key Constraints>
     1. Make sure you have completed all the tasks given to you
-    2. Always respond in Brazilian Portuguese
-    3. Check if you have followed all the steps
+    2. Check if you have followed all the steps
+    3. Try to answer the user's questions with the language they used
+    4. If you don't know the answer, say "I don't know"
 </Key Constraints>
 """
