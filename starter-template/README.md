@@ -190,7 +190,7 @@ You can run the agent locally using the ADK CLI or the ADK Dev UI:
 Provide a quick example of how a user might interact with your agent:
 
 > **User:** Hi there
->
+
 > **Agent:**  Hello User!
 
 ## Evaluating the Agent (`eval/` folder)

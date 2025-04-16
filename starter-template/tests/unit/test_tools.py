@@ -12,3 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from starter_template.tools.example_tool import tool1_name
+from starter_template.sub_agents.sub_agent1_name.tools.example_tool2 import tool2_name
+
+
+# ----- Define basic unit tests for individual tools -----
+
+
+def test_tool1_name():
+    result = tool1_name(name="User")
+    assert result == "Hello User!"
+
+
+def test_tool2_name():
+    result = tool2_name(name="User 2")
+    assert result == "Hello User 2!"

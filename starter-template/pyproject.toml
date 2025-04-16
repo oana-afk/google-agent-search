@@ -2,14 +2,14 @@
 name = "starter-template"
 version = "0.1.0"
 description = "One-line description explaining your sample."
-authors = [{ name = "Your Name", email = "your.name@test.com" }]
+authors = [{ name = "Your Name", email = "your.name@domain.com" }]
 
 license = "Apache License 2.0"
 readme = "README.md"
 
 # Dependencies required for your sample and local deployment
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.9"
 google-adk = ">=0.1.0"
 google-cloud-aiplatform = { extras = [
         "adk",
