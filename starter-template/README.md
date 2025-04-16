@@ -105,7 +105,7 @@ The key attributes of the `<YOUR_AGENT_NAME>` Agent include:
 >
 > ```bash
 > pip install poetry
-> ```
+>
 
     Install dependencies using Poetry (recommended) or pip.
 
