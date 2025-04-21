@@ -26,7 +26,7 @@ The agent is built using a multi-modal architecture, combining text and video in
 
 It is important to notice that this agent is not integrated to an actual backend and the behaviour is based on mocked tools. If you would like to implement this agent with actual backend integration you will need to edit [customer_service/tools.py](./customer_service/tools/tools.py)
 
-Because the tools are mocked you might notice that some reuqested changes will not be applied. For instance newly added item to cart will not show if later a user asks the agent to list all items.
+Because the tools are mocked you might notice that some requested changes will not be applied. For instance newly added item to cart will not show if later a user asks the agent to list all items.
 
 ### Key Features
 
