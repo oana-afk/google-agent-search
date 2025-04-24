@@ -46,7 +46,7 @@ This diagram outlines the agent's workflow, designed to provide informed and con
 
     ```bash
     git clone https://github.com/google/adk-samples.git
-    cd google-adk-samples/agents/RAG
+    cd adk-samples/agents/RAG
     ```
 
 2.  **Install Dependencies with Poetry:**
@@ -233,7 +233,7 @@ After deploying the agent, you'll be able to read the following INFO log message
 Deployed agent to Vertex AI Agent Engine successfully, resource name: projects/<PROJECT_NUMBER>/locations/us-central1/reasoningEngines/<AGENT_ENGINE_ID>
 ```
 
-Please note your Agent Engine resource name and update `.env` file accordingly as this is crutial for testing the remote agent.
+Please note your Agent Engine resource name and update `.env` file accordingly as this is crucial for testing the remote agent.
 
 You may also modify the deployment script for your use cases.
 

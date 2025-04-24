@@ -90,7 +90,12 @@ to implement this workflow.
     cd adk-samples/agents/fomc-research
     ```
 
-    Install [Poetry](https://python-poetry.org).
+    Install [Poetry](https://python-poetry.org)
+
+    If you have not installed poetry before, you can do so by running:
+    ```bash
+    pip install poetry
+    ```
 
     Install the FOMC Research agent requirements:
     ```bash
@@ -231,7 +236,7 @@ The last sequence of digits is the AgentEngine resource ID.
 
 Once you have successfully deployed your agent, you can interact with it
 using the `test_deployment.py` script in the `deployment` directory. Store the
-agent's resource ID in an enviroment variable and run the following command:
+agent's resource ID in an environment variable and run the following command:
 ```bash
 export RESOURCE_ID=...
 export USER_ID=<any string>
